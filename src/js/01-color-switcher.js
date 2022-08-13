@@ -9,7 +9,7 @@ function getRandomHexColor() {
 }
 
 function changeColor() { 
-    randomColor =  getRandomHexColor() 
+    let randomColor =  getRandomHexColor() 
     refs.body.style.backgroundColor = randomColor
 }
 
