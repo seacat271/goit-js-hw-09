@@ -28,8 +28,7 @@ flatpickr("#datetime-picker", {
     },
     onChange() {
         countdownTimer.stop();
-    }
-        
+    }       
   })
 
 function checkDate (date) {
