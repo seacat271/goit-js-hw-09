@@ -1,3 +1,6 @@
+
+@font-face { font-family: 'a_LCDNova';  src: url('../fonts/0122a1624fbf20f49bd0c3dc453efb09.woff') format('woff'); }
+
 * {
   box-sizing: border-box;
 }
@@ -31,6 +34,7 @@ img {
 .value {
   text-align: center;
   font-size: 70px;
+  font-family: 'a_LCDNova', sans-serif;
 }
 .label {
 text-align: center;
