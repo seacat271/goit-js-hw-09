@@ -69,18 +69,18 @@ const countdownTimer = {
 function calculateDisplayTime () {
     const finalTime = refs.fp.selectedDates[0].getTime();
     const currentDisplayTime = convertMs(finalTime - Date.now());
-    checkEndDate(finalTime, currentTime)
+    checkEndDate(finalTime, Date.now())
     updateClockFace(addLeadingZero(currentDisplayTime));
 }
 
 function updateClockFace(timeKit) {
-    timerDisplay.forEach((elem,index)=> {
+    timerDisplay.forEach((elem, index) => {
         elem.textContent = Object.values(timeKit)[index]
     })}
+
 function addLeadingZero(Obj) {
     for(let key in Obj) {
-        Obj[key].length > 1 ? String(Obj[key]) : Obj[key] = String(Obj[key]).padStart(2, 0)
-    }
+        Obj[key] =`${(Obj[key])}`.padStart(2, 0)}
     return Obj;
 }
     

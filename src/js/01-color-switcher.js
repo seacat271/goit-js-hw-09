@@ -13,7 +13,6 @@ function changeColor() {
 }
 
 function BtnDisabler () {
-    // [...document.querySelectorAll("button")].map(item => item.disabled = !item.disabled)
     [refs.startBtn, refs.stopBtn].forEach(item => item.disabled = !item.disabled)
 }
 
