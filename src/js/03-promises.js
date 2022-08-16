@@ -1,16 +1,13 @@
 import { Report } from 'notiflix/build/notiflix-report-aio';
 
 function createPromise(position, delay) { 
-  const promise = new Promise((resolve, reject) => {
+   return new Promise((resolve, reject) => {
     const shouldResolve = Math.random() > 0.3;
-    let Obj = { position, delay };
   setTimeout(() => {
-    if (shouldResolve) resolve(Obj)
-    reject(Obj);
+    if (shouldResolve) resolve({ position, delay });
+    reject({ position, delay });
     }, delay)
-  })
-  return promise
-  }
+  })}
 
 const refs = {
   inputForm: document.querySelector(".form"),
