@@ -6,16 +6,16 @@ const refs = {
 
 refs.inputForm.addEventListener("submit", (event) =>{
   event.preventDefault()
-  let { delay: startDelay, step, amount } = event.target.elements;
+  const { delay: startDelay, step, amount } = event.target.elements;
 
   generatePromises(startDelay, step, amount);
   resetInputForm(startDelay, step, amount);
 
 })
 
-function generatePromises (a, b, c) {
-  for (let i = 1; i <= c.value; i += 1){
-  let delay = +a.value + b.value * (i - 1);
+function generatePromises (startDelay, step, amount) {
+  for (let i = 1; i <= amount.value; i += 1){
+  const delay = +startDelay.value + step.value * (i - 1);
   createPromise(i, delay)
   .then(({ position, delay }) => {Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`)})
   .catch(({ position, delay }) => {Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`)})

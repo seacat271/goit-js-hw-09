@@ -9,19 +9,21 @@ function getRandomHexColor() {
 }
 
 function changeColor() { 
-    let randomColor =  getRandomHexColor() 
-    refs.body.style.backgroundColor = randomColor
+    refs.body.style.backgroundColor = getRandomHexColor()
 }
 
 function BtnDisabler () {
-    let arr = document.querySelectorAll("button");
-    [...arr].map(item => item.disabled = !item.disabled)
+    // [...document.querySelectorAll("button")].map(item => item.disabled = !item.disabled)
+    [refs.startBtn, refs.stopBtn].forEach(item => item.disabled = !item.disabled)
 }
+
+refs.startBtn.addEventListener("click", onClickStartBtn)
+
+refs.stopBtn.addEventListener("click", onClickStopBtn)
 
 const TIME_DELAY = 1000;
 let colorTimerId = null;
 refs.stopBtn.disabled = true; 
-
 
 function onClickStartBtn() {
     changeColor()
@@ -35,9 +37,3 @@ function onClickStopBtn() {
     BtnDisabler ()   
 }
 
-
-
-
-refs.startBtn.addEventListener("click", onClickStartBtn)
-
-refs.stopBtn.addEventListener("click", onClickStopBtn)
