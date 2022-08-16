@@ -1,2 +1,0 @@
-function e(e,o){new Promise(((t,i)=>{const n=Math.random()>.3;setTimeout((()=>{n?t({position:e,delay:o}):i({position:e,delay:o})}),1e3)}))}({inputForm:document.querySelector(".form")}).inputForm.addEventListener("submit",(o=>{o.preventDefault(),e()})),e(2,1500).then((({position:e,delay:o})=>{console.log(`✅ Fulfilled promise ${e} in ${o}ms`)})).catch((({position:e,delay:o})=>{console.log(`❌ Rejected promise ${e} in ${o}ms`)}));
-//# sourceMappingURL=03-promises.347e3caf.js.map
